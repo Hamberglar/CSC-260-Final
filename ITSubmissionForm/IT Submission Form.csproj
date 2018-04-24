@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventory.cs" />
     <Compile Include="ITSubmissionForm.cs">
       <SubType>Form</SubType>
     </Compile>
