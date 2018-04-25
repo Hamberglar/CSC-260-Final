@@ -30,7 +30,7 @@ namespace ITSubmissionForm
 
         public User(string UserName)
         {
-            this._Name = UserName;
+            _Name = UserName;
         }
     }
 }

@@ -208,7 +208,7 @@
             this.btnClear.Text = "Cancel";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // formCheckIn
+            // FormCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -220,8 +220,8 @@
             this.Controls.Add(this.rtxtIssueDescription);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CalendarWidget);
-            this.Name = "formCheckIn";
-            this.Text = "Check In";
+            this.Name = "FormCheckIn";
+            this.Text = " ";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

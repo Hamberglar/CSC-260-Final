@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp2
+namespace ITSubmissionForm
 {
     class Inventory
     {
@@ -18,8 +18,8 @@ namespace WindowsFormsApp2
 
         public Inventory(string brand, string model)
         {
-            this._ComputerBrand = brand;
-            this._ComputerModel = model;
+            _ComputerBrand = brand;
+            _ComputerModel = model;
         }
     }
 }
