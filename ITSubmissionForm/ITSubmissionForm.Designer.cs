@@ -42,19 +42,28 @@
             this.CalendarWidget = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rtxtIssueDescription = new System.Windows.Forms.RichTextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMake = new System.Windows.Forms.Label();
-            this.txtMake = new System.Windows.Forms.TextBox();
-            this.txtModel = new System.Windows.Forms.TextBox();
-            this.lblModel = new System.Windows.Forms.Label();
             this.txtTech = new System.Windows.Forms.TextBox();
             this.lblTech = new System.Windows.Forms.Label();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.txtTime = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chkPowerCord = new System.Windows.Forms.CheckBox();
+            this.chkBag = new System.Windows.Forms.CheckBox();
+            this.chkDiscs = new System.Windows.Forms.CheckBox();
+            this.chkMouse = new System.Windows.Forms.CheckBox();
+            this.chkKeyboard = new System.Windows.Forms.CheckBox();
+            this.chkExternal = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtName
@@ -146,10 +155,10 @@
             // 
             // CalendarWidget
             // 
-            this.CalendarWidget.Location = new System.Drawing.Point(12, 234);
+            this.CalendarWidget.Location = new System.Drawing.Point(12, 255);
+            this.CalendarWidget.MaxSelectionCount = 1;
             this.CalendarWidget.Name = "CalendarWidget";
             this.CalendarWidget.TabIndex = 17;
-            this.CalendarWidget.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.CalendarWidget_DateChanged);
             // 
             // panel2
             // 
@@ -173,49 +182,37 @@
             // 
             this.rtxtIssueDescription.Location = new System.Drawing.Point(251, 154);
             this.rtxtIssueDescription.Name = "rtxtIssueDescription";
-            this.rtxtIssueDescription.Size = new System.Drawing.Size(395, 283);
+            this.rtxtIssueDescription.Size = new System.Drawing.Size(395, 298);
             this.rtxtIssueDescription.TabIndex = 20;
             this.rtxtIssueDescription.Text = "";
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Power Cord",
-            "Bag/Case",
-            "External Disk",
-            "Other"});
-            this.checkedListBox1.Location = new System.Drawing.Point(469, 9);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(177, 64);
-            this.checkedListBox1.TabIndex = 21;
-            // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(470, 80);
+            this.textBox7.Location = new System.Drawing.Point(466, 93);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(176, 68);
+            this.textBox7.Size = new System.Drawing.Size(180, 55);
             this.textBox7.TabIndex = 22;
             this.textBox7.Text = "Other";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(12, 408);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 429);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(106, 23);
             this.btnSubmit.TabIndex = 23;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
             // 
-            // btnClear
+            // BtnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(133, 408);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(106, 23);
-            this.btnClear.TabIndex = 24;
-            this.btnClear.Text = "Cancel";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Location = new System.Drawing.Point(133, 429);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(106, 23);
+            this.BtnClear.TabIndex = 24;
+            this.BtnClear.Text = "Cancel";
+            this.BtnClear.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -223,44 +220,12 @@
             this.panel1.Controls.Add(this.lblTech);
             this.panel1.Controls.Add(this.txtModel);
             this.panel1.Controls.Add(this.lblModel);
-            this.panel1.Controls.Add(this.txtMake);
-            this.panel1.Controls.Add(this.lblMake);
+            this.panel1.Controls.Add(this.txtBrand);
+            this.panel1.Controls.Add(this.lblBrand);
             this.panel1.Location = new System.Drawing.Point(12, 154);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(227, 73);
             this.panel1.TabIndex = 25;
-            // 
-            // lblMake
-            // 
-            this.lblMake.AutoSize = true;
-            this.lblMake.Location = new System.Drawing.Point(5, 7);
-            this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(34, 13);
-            this.lblMake.TabIndex = 0;
-            this.lblMake.Text = "Make";
-            // 
-            // txtMake
-            // 
-            this.txtMake.Location = new System.Drawing.Point(46, 4);
-            this.txtMake.Name = "txtMake";
-            this.txtMake.Size = new System.Drawing.Size(178, 20);
-            this.txtMake.TabIndex = 1;
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(46, 26);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(178, 20);
-            this.txtModel.TabIndex = 3;
-            // 
-            // lblModel
-            // 
-            this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(5, 29);
-            this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(36, 13);
-            this.lblModel.TabIndex = 2;
-            this.lblModel.Text = "Model";
             // 
             // txtTech
             // 
@@ -278,16 +243,139 @@
             this.lblTech.TabIndex = 4;
             this.lblTech.Text = "Tech";
             // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(46, 26);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(178, 20);
+            this.txtModel.TabIndex = 3;
+            // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(5, 29);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(36, 13);
+            this.lblModel.TabIndex = 2;
+            this.lblModel.Text = "Model";
+            // 
+            // txtBrand
+            // 
+            this.txtBrand.Location = new System.Drawing.Point(46, 4);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(178, 20);
+            this.txtBrand.TabIndex = 1;
+            // 
+            // lblBrand
+            // 
+            this.lblBrand.AutoSize = true;
+            this.lblBrand.Location = new System.Drawing.Point(5, 7);
+            this.lblBrand.Name = "lblBrand";
+            this.lblBrand.Size = new System.Drawing.Size(35, 13);
+            this.lblBrand.TabIndex = 0;
+            this.lblBrand.Text = "Brand";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(13, 234);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(30, 13);
+            this.lblTime.TabIndex = 26;
+            this.lblTime.Text = "Time";
+            // 
+            // txtTime
+            // 
+            this.txtTime.Location = new System.Drawing.Point(54, 231);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(185, 20);
+            this.txtTime.TabIndex = 27;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.chkExternal);
+            this.panel3.Controls.Add(this.chkKeyboard);
+            this.panel3.Controls.Add(this.chkMouse);
+            this.panel3.Controls.Add(this.chkDiscs);
+            this.panel3.Controls.Add(this.chkBag);
+            this.panel3.Controls.Add(this.chkPowerCord);
+            this.panel3.Location = new System.Drawing.Point(467, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(179, 74);
+            this.panel3.TabIndex = 28;
+            // 
+            // chkPowerCord
+            // 
+            this.chkPowerCord.AutoSize = true;
+            this.chkPowerCord.Location = new System.Drawing.Point(4, 4);
+            this.chkPowerCord.Name = "chkPowerCord";
+            this.chkPowerCord.Size = new System.Drawing.Size(81, 17);
+            this.chkPowerCord.TabIndex = 0;
+            this.chkPowerCord.Text = "Power Cord";
+            this.chkPowerCord.UseVisualStyleBackColor = true;
+            // 
+            // chkBag
+            // 
+            this.chkBag.AutoSize = true;
+            this.chkBag.Location = new System.Drawing.Point(4, 27);
+            this.chkBag.Name = "chkBag";
+            this.chkBag.Size = new System.Drawing.Size(74, 17);
+            this.chkBag.TabIndex = 1;
+            this.chkBag.Text = "Bag/Case";
+            this.chkBag.UseVisualStyleBackColor = true;
+            // 
+            // chkDiscs
+            // 
+            this.chkDiscs.AutoSize = true;
+            this.chkDiscs.Location = new System.Drawing.Point(92, 4);
+            this.chkDiscs.Name = "chkDiscs";
+            this.chkDiscs.Size = new System.Drawing.Size(52, 17);
+            this.chkDiscs.TabIndex = 3;
+            this.chkDiscs.Text = "Discs";
+            this.chkDiscs.UseVisualStyleBackColor = true;
+            // 
+            // chkMouse
+            // 
+            this.chkMouse.AutoSize = true;
+            this.chkMouse.Location = new System.Drawing.Point(92, 27);
+            this.chkMouse.Name = "chkMouse";
+            this.chkMouse.Size = new System.Drawing.Size(58, 17);
+            this.chkMouse.TabIndex = 4;
+            this.chkMouse.Text = "Mouse";
+            this.chkMouse.UseVisualStyleBackColor = true;
+            // 
+            // chkKeyboard
+            // 
+            this.chkKeyboard.AutoSize = true;
+            this.chkKeyboard.Location = new System.Drawing.Point(92, 50);
+            this.chkKeyboard.Name = "chkKeyboard";
+            this.chkKeyboard.Size = new System.Drawing.Size(71, 17);
+            this.chkKeyboard.TabIndex = 5;
+            this.chkKeyboard.Text = "Keyboard";
+            this.chkKeyboard.UseVisualStyleBackColor = true;
+            // 
+            // chkExternal
+            // 
+            this.chkExternal.AutoSize = true;
+            this.chkExternal.Location = new System.Drawing.Point(4, 50);
+            this.chkExternal.Name = "chkExternal";
+            this.chkExternal.Size = new System.Drawing.Size(72, 17);
+            this.chkExternal.TabIndex = 6;
+            this.chkExternal.Text = "USB Disk";
+            this.chkExternal.UseVisualStyleBackColor = true;
+            // 
             // FormCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 443);
+            this.ClientSize = new System.Drawing.Size(658, 464);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.txtTime);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.rtxtIssueDescription);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CalendarWidget);
@@ -297,6 +385,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,17 +408,25 @@
         private System.Windows.Forms.MonthCalendar CalendarWidget;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox rtxtIssueDescription;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTech;
         private System.Windows.Forms.Label lblTech;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.Label lblModel;
-        private System.Windows.Forms.TextBox txtMake;
-        private System.Windows.Forms.Label lblMake;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.TextBox txtTime;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox chkBag;
+        private System.Windows.Forms.CheckBox chkPowerCord;
+        private System.Windows.Forms.CheckBox chkKeyboard;
+        private System.Windows.Forms.CheckBox chkMouse;
+        private System.Windows.Forms.CheckBox chkDiscs;
+        private System.Windows.Forms.CheckBox chkExternal;
     }
 }
 
