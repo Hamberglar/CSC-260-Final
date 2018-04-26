@@ -27,18 +27,40 @@ namespace ITSubmissionForm
             PresentCase.Date = Convert.ToString(CalendarWidget.SelectionStart);
             PresentCase.Time = txtTime.Text;
 
-            PresentInventory.Bag = Convert.ToBoolean(chkBag.CheckState);
-            PresentInventory.PowerCord = Convert.ToBoolean(chkPowerCord.CheckState);
-            PresentInventory.UsbDrive = Convert.ToBoolean(chkExternal.CheckState);
-            PresentInventory.CompactDiscs = Convert.ToBoolean(chkDiscs.CheckState);
-            PresentInventory.Mouse = Convert.ToBoolean(chkMouse.CheckState);
-            PresentInventory.Keyboard = Convert.ToBoolean(chkKeyboard.CheckState);
+            txtTech.Text = "";
+            txtTime.Text = "";
+            rtxtIssueDescription.Text = "";
+
+            PresentInventory.Bag = chkBag.Checked;
+            PresentInventory.PowerCord = chkPowerCord.Checked;
+            PresentInventory.UsbDrive = chkExternal.Checked;
+            PresentInventory.CompactDiscs = chkDiscs.Checked;
+            PresentInventory.Mouse = chkMouse.Checked;
+            PresentInventory.Keyboard = chkKeyboard.Checked;
+            PresentInventory.Other = txtOther.Text;
+
+            chkBag.Checked = false;
+            chkPowerCord.Checked = false;
+            chkExternal.Checked = false;
+            chkDiscs.Checked = false;
+            chkMouse.Checked = false;
+            chkKeyboard.Checked = false;
+            txtOther.Text = "";
+            txtBrand.Text = "";
+            txtModel.Text = "";
 
             PresentUser.Phone1 = txtPhone1.Text;
             PresentUser.Phone2 = txtPhone2.Text;
             PresentUser.Email = txtEmail.Text;
             PresentUser.Address = txtAddress.Text;
             PresentUser.Password = txtPassword.Text;
+
+            txtName.Text = "";
+            txtPhone1.Text = "";
+            txtPhone2.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            txtPassword.Text = "";
 
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\temp\outputexample.txt", true))
             {
@@ -82,6 +104,28 @@ namespace ITSubmissionForm
                 }
                 file.WriteLine("\n");
             }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            txtTech.Text = "";
+            txtTime.Text = "";
+            rtxtIssueDescription.Text = "";
+            chkBag.Checked = false;
+            chkPowerCord.Checked = false;
+            chkExternal.Checked = false;
+            chkDiscs.Checked = false;
+            chkMouse.Checked = false;
+            chkKeyboard.Checked = false;
+            txtOther.Text = "";
+            txtBrand.Text = "";
+            txtModel.Text = "";
+            txtName.Text = "";
+            txtPhone1.Text = "";
+            txtPhone2.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            txtPassword.Text = "";
         }
     }
 }

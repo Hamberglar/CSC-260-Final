@@ -42,7 +42,7 @@
             this.CalendarWidget = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rtxtIssueDescription = new System.Windows.Forms.RichTextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtOther = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,12 +55,12 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.chkPowerCord = new System.Windows.Forms.CheckBox();
-            this.chkBag = new System.Windows.Forms.CheckBox();
-            this.chkDiscs = new System.Windows.Forms.CheckBox();
-            this.chkMouse = new System.Windows.Forms.CheckBox();
-            this.chkKeyboard = new System.Windows.Forms.CheckBox();
             this.chkExternal = new System.Windows.Forms.CheckBox();
+            this.chkKeyboard = new System.Windows.Forms.CheckBox();
+            this.chkMouse = new System.Windows.Forms.CheckBox();
+            this.chkDiscs = new System.Windows.Forms.CheckBox();
+            this.chkBag = new System.Windows.Forms.CheckBox();
+            this.chkPowerCord = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -186,14 +186,14 @@
             this.rtxtIssueDescription.TabIndex = 20;
             this.rtxtIssueDescription.Text = "";
             // 
-            // textBox7
+            // txtOther
             // 
-            this.textBox7.Location = new System.Drawing.Point(466, 93);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(180, 55);
-            this.textBox7.TabIndex = 22;
-            this.textBox7.Text = "Other";
+            this.txtOther.Location = new System.Drawing.Point(466, 93);
+            this.txtOther.Multiline = true;
+            this.txtOther.Name = "txtOther";
+            this.txtOther.Size = new System.Drawing.Size(180, 55);
+            this.txtOther.TabIndex = 22;
+            this.txtOther.Text = "Other";
             // 
             // btnSubmit
             // 
@@ -211,8 +211,9 @@
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(106, 23);
             this.BtnClear.TabIndex = 24;
-            this.BtnClear.Text = "Cancel";
+            this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // panel1
             // 
@@ -229,9 +230,9 @@
             // 
             // txtTech
             // 
-            this.txtTech.Location = new System.Drawing.Point(46, 48);
+            this.txtTech.Location = new System.Drawing.Point(43, 48);
             this.txtTech.Name = "txtTech";
-            this.txtTech.Size = new System.Drawing.Size(178, 20);
+            this.txtTech.Size = new System.Drawing.Size(181, 20);
             this.txtTech.TabIndex = 5;
             // 
             // lblTech
@@ -245,9 +246,9 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(46, 26);
+            this.txtModel.Location = new System.Drawing.Point(43, 26);
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(178, 20);
+            this.txtModel.Size = new System.Drawing.Size(181, 20);
             this.txtModel.TabIndex = 3;
             // 
             // lblModel
@@ -261,9 +262,9 @@
             // 
             // txtBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(46, 4);
+            this.txtBrand.Location = new System.Drawing.Point(43, 4);
             this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(178, 20);
+            this.txtBrand.Size = new System.Drawing.Size(181, 20);
             this.txtBrand.TabIndex = 1;
             // 
             // lblBrand
@@ -278,7 +279,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(13, 234);
+            this.lblTime.Location = new System.Drawing.Point(17, 234);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(30, 13);
             this.lblTime.TabIndex = 26;
@@ -286,9 +287,9 @@
             // 
             // txtTime
             // 
-            this.txtTime.Location = new System.Drawing.Point(54, 231);
+            this.txtTime.Location = new System.Drawing.Point(55, 231);
             this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(185, 20);
+            this.txtTime.Size = new System.Drawing.Size(181, 20);
             this.txtTime.TabIndex = 27;
             // 
             // panel3
@@ -304,45 +305,15 @@
             this.panel3.Size = new System.Drawing.Size(179, 74);
             this.panel3.TabIndex = 28;
             // 
-            // chkPowerCord
+            // chkExternal
             // 
-            this.chkPowerCord.AutoSize = true;
-            this.chkPowerCord.Location = new System.Drawing.Point(4, 4);
-            this.chkPowerCord.Name = "chkPowerCord";
-            this.chkPowerCord.Size = new System.Drawing.Size(81, 17);
-            this.chkPowerCord.TabIndex = 0;
-            this.chkPowerCord.Text = "Power Cord";
-            this.chkPowerCord.UseVisualStyleBackColor = true;
-            // 
-            // chkBag
-            // 
-            this.chkBag.AutoSize = true;
-            this.chkBag.Location = new System.Drawing.Point(4, 27);
-            this.chkBag.Name = "chkBag";
-            this.chkBag.Size = new System.Drawing.Size(74, 17);
-            this.chkBag.TabIndex = 1;
-            this.chkBag.Text = "Bag/Case";
-            this.chkBag.UseVisualStyleBackColor = true;
-            // 
-            // chkDiscs
-            // 
-            this.chkDiscs.AutoSize = true;
-            this.chkDiscs.Location = new System.Drawing.Point(92, 4);
-            this.chkDiscs.Name = "chkDiscs";
-            this.chkDiscs.Size = new System.Drawing.Size(52, 17);
-            this.chkDiscs.TabIndex = 3;
-            this.chkDiscs.Text = "Discs";
-            this.chkDiscs.UseVisualStyleBackColor = true;
-            // 
-            // chkMouse
-            // 
-            this.chkMouse.AutoSize = true;
-            this.chkMouse.Location = new System.Drawing.Point(92, 27);
-            this.chkMouse.Name = "chkMouse";
-            this.chkMouse.Size = new System.Drawing.Size(58, 17);
-            this.chkMouse.TabIndex = 4;
-            this.chkMouse.Text = "Mouse";
-            this.chkMouse.UseVisualStyleBackColor = true;
+            this.chkExternal.AutoSize = true;
+            this.chkExternal.Location = new System.Drawing.Point(4, 50);
+            this.chkExternal.Name = "chkExternal";
+            this.chkExternal.Size = new System.Drawing.Size(72, 17);
+            this.chkExternal.TabIndex = 6;
+            this.chkExternal.Text = "USB Disk";
+            this.chkExternal.UseVisualStyleBackColor = true;
             // 
             // chkKeyboard
             // 
@@ -354,15 +325,45 @@
             this.chkKeyboard.Text = "Keyboard";
             this.chkKeyboard.UseVisualStyleBackColor = true;
             // 
-            // chkExternal
+            // chkMouse
             // 
-            this.chkExternal.AutoSize = true;
-            this.chkExternal.Location = new System.Drawing.Point(4, 50);
-            this.chkExternal.Name = "chkExternal";
-            this.chkExternal.Size = new System.Drawing.Size(72, 17);
-            this.chkExternal.TabIndex = 6;
-            this.chkExternal.Text = "USB Disk";
-            this.chkExternal.UseVisualStyleBackColor = true;
+            this.chkMouse.AutoSize = true;
+            this.chkMouse.Location = new System.Drawing.Point(92, 27);
+            this.chkMouse.Name = "chkMouse";
+            this.chkMouse.Size = new System.Drawing.Size(58, 17);
+            this.chkMouse.TabIndex = 4;
+            this.chkMouse.Text = "Mouse";
+            this.chkMouse.UseVisualStyleBackColor = true;
+            // 
+            // chkDiscs
+            // 
+            this.chkDiscs.AutoSize = true;
+            this.chkDiscs.Location = new System.Drawing.Point(92, 4);
+            this.chkDiscs.Name = "chkDiscs";
+            this.chkDiscs.Size = new System.Drawing.Size(52, 17);
+            this.chkDiscs.TabIndex = 3;
+            this.chkDiscs.Text = "Discs";
+            this.chkDiscs.UseVisualStyleBackColor = true;
+            // 
+            // chkBag
+            // 
+            this.chkBag.AutoSize = true;
+            this.chkBag.Location = new System.Drawing.Point(4, 27);
+            this.chkBag.Name = "chkBag";
+            this.chkBag.Size = new System.Drawing.Size(74, 17);
+            this.chkBag.TabIndex = 1;
+            this.chkBag.Text = "Bag/Case";
+            this.chkBag.UseVisualStyleBackColor = true;
+            // 
+            // chkPowerCord
+            // 
+            this.chkPowerCord.AutoSize = true;
+            this.chkPowerCord.Location = new System.Drawing.Point(4, 4);
+            this.chkPowerCord.Name = "chkPowerCord";
+            this.chkPowerCord.Size = new System.Drawing.Size(81, 17);
+            this.chkPowerCord.TabIndex = 0;
+            this.chkPowerCord.Text = "Power Cord";
+            this.chkPowerCord.UseVisualStyleBackColor = true;
             // 
             // FormCheckIn
             // 
@@ -375,7 +376,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtOther);
             this.Controls.Add(this.rtxtIssueDescription);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CalendarWidget);
@@ -408,7 +409,7 @@
         private System.Windows.Forms.MonthCalendar CalendarWidget;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox rtxtIssueDescription;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtOther;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.Panel panel1;

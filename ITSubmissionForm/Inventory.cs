@@ -16,7 +16,7 @@ namespace ITSubmissionForm
         public bool CompactDiscs { get; set; }
         public bool Keyboard { get; set; }
         public bool Mouse { get; set; }
-        public string OtherText { get; set; }
+        public string Other { get; set; }
 
         public Inventory(string brand, string model)
         {
