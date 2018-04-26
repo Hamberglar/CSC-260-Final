@@ -16,5 +16,10 @@ namespace ITSubmissionForm
         {
             InitializeComponent();
         }
+
+        private void CalendarWidget_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }

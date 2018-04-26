@@ -46,7 +46,15 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMake = new System.Windows.Forms.Label();
+            this.txtMake = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.lblModel = new System.Windows.Forms.Label();
+            this.txtTech = new System.Windows.Forms.TextBox();
+            this.lblTech = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtName
@@ -138,9 +146,10 @@
             // 
             // CalendarWidget
             // 
-            this.CalendarWidget.Location = new System.Drawing.Point(12, 154);
+            this.CalendarWidget.Location = new System.Drawing.Point(12, 234);
             this.CalendarWidget.Name = "CalendarWidget";
             this.CalendarWidget.TabIndex = 17;
+            this.CalendarWidget.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.CalendarWidget_DateChanged);
             // 
             // panel2
             // 
@@ -164,7 +173,7 @@
             // 
             this.rtxtIssueDescription.Location = new System.Drawing.Point(251, 154);
             this.rtxtIssueDescription.Name = "rtxtIssueDescription";
-            this.rtxtIssueDescription.Size = new System.Drawing.Size(395, 198);
+            this.rtxtIssueDescription.Size = new System.Drawing.Size(395, 283);
             this.rtxtIssueDescription.TabIndex = 20;
             this.rtxtIssueDescription.Text = "";
             // 
@@ -192,7 +201,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(12, 329);
+            this.btnSubmit.Location = new System.Drawing.Point(12, 408);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(106, 23);
             this.btnSubmit.TabIndex = 23;
@@ -201,18 +210,80 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(133, 328);
+            this.btnClear.Location = new System.Drawing.Point(133, 408);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(106, 23);
             this.btnClear.TabIndex = 24;
             this.btnClear.Text = "Cancel";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtTech);
+            this.panel1.Controls.Add(this.lblTech);
+            this.panel1.Controls.Add(this.txtModel);
+            this.panel1.Controls.Add(this.lblModel);
+            this.panel1.Controls.Add(this.txtMake);
+            this.panel1.Controls.Add(this.lblMake);
+            this.panel1.Location = new System.Drawing.Point(12, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(227, 73);
+            this.panel1.TabIndex = 25;
+            // 
+            // lblMake
+            // 
+            this.lblMake.AutoSize = true;
+            this.lblMake.Location = new System.Drawing.Point(5, 7);
+            this.lblMake.Name = "lblMake";
+            this.lblMake.Size = new System.Drawing.Size(34, 13);
+            this.lblMake.TabIndex = 0;
+            this.lblMake.Text = "Make";
+            // 
+            // txtMake
+            // 
+            this.txtMake.Location = new System.Drawing.Point(46, 4);
+            this.txtMake.Name = "txtMake";
+            this.txtMake.Size = new System.Drawing.Size(178, 20);
+            this.txtMake.TabIndex = 1;
+            // 
+            // txtModel
+            // 
+            this.txtModel.Location = new System.Drawing.Point(46, 26);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.Size = new System.Drawing.Size(178, 20);
+            this.txtModel.TabIndex = 3;
+            // 
+            // lblModel
+            // 
+            this.lblModel.AutoSize = true;
+            this.lblModel.Location = new System.Drawing.Point(5, 29);
+            this.lblModel.Name = "lblModel";
+            this.lblModel.Size = new System.Drawing.Size(36, 13);
+            this.lblModel.TabIndex = 2;
+            this.lblModel.Text = "Model";
+            // 
+            // txtTech
+            // 
+            this.txtTech.Location = new System.Drawing.Point(46, 48);
+            this.txtTech.Name = "txtTech";
+            this.txtTech.Size = new System.Drawing.Size(178, 20);
+            this.txtTech.TabIndex = 5;
+            // 
+            // lblTech
+            // 
+            this.lblTech.AutoSize = true;
+            this.lblTech.Location = new System.Drawing.Point(5, 51);
+            this.lblTech.Name = "lblTech";
+            this.lblTech.Size = new System.Drawing.Size(32, 13);
+            this.lblTech.TabIndex = 4;
+            this.lblTech.Text = "Tech";
+            // 
             // FormCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 364);
+            this.ClientSize = new System.Drawing.Size(658, 443);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.textBox7);
@@ -224,6 +295,8 @@
             this.Text = " ";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,6 +322,13 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtTech;
+        private System.Windows.Forms.Label lblTech;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.Label lblModel;
+        private System.Windows.Forms.TextBox txtMake;
+        private System.Windows.Forms.Label lblMake;
     }
 }
 
