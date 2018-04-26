@@ -55,6 +55,32 @@ namespace ITSubmissionForm
                 file.WriteLine("Brand/Model: " + PresentInventory.ComputerBrand + PresentInventory.ComputerModel);
                 file.WriteLine("Date: " + PresentCase.Date);
                 file.WriteLine("Time: " + PresentCase.Time);
+                file.WriteLine("Customer dropped off: ");
+                if (PresentInventory.Bag)
+                {
+                    file.Write("Bag, ");
+                }
+                if (PresentInventory.PowerCord)
+                {
+                    file.Write("Power Cord, ");
+                }
+                if (PresentInventory.UsbDrive)
+                {
+                    file.Write("USB Drive, ");
+                }
+                if (PresentInventory.CompactDiscs)
+                {
+                    file.Write("CDs, ");
+                }
+                if (PresentInventory.Mouse)
+                {
+                    file.Write("Mouse, ");
+                }
+                if (PresentInventory.Keyboard)
+                {
+                    file.Write("Keyboard, ");
+                }
+                file.WriteLine("\n");
             }
         }
     }
