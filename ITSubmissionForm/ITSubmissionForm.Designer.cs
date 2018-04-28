@@ -58,7 +58,7 @@
             this.chkDiscs = new System.Windows.Forms.CheckBox();
             this.chkBag = new System.Windows.Forms.CheckBox();
             this.chkPowerCord = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.TimeWidget = new System.Windows.Forms.DateTimePicker();
             this.CmbBoxHelpDesk = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -342,12 +342,12 @@
             this.chkPowerCord.Text = "Power Cord";
             this.chkPowerCord.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // TimeWidget
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 233);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 30;
+            this.TimeWidget.Location = new System.Drawing.Point(12, 233);
+            this.TimeWidget.Name = "TimeWidget";
+            this.TimeWidget.Size = new System.Drawing.Size(200, 20);
+            this.TimeWidget.TabIndex = 30;
             // 
             // CmbBoxHelpDesk
             // 
@@ -377,7 +377,7 @@
             this.ClientSize = new System.Drawing.Size(658, 318);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CmbBoxHelpDesk);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.TimeWidget);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnClear);
@@ -430,7 +430,7 @@
         private System.Windows.Forms.CheckBox chkMouse;
         private System.Windows.Forms.CheckBox chkDiscs;
         private System.Windows.Forms.CheckBox chkExternal;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker TimeWidget;
         private System.Windows.Forms.ComboBox CmbBoxHelpDesk;
         private System.Windows.Forms.Label label1;
     }

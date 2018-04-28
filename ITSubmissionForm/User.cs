@@ -8,7 +8,7 @@ namespace ITSubmissionForm
 {
     public class User
     {
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public string Password { get; set; }
         public string Phone1 { get; set; }
         public string Phone2 { get; set; }

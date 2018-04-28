@@ -11,8 +11,7 @@ namespace ITSubmissionForm
         public int CaseID { get; private set; }
         public string Tech { get; set; }
         public string Issue { get; set; }
-        public string Time { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         public Case(string description)
         {

@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Case.cs" />
+    <Compile Include="HelpdeskUser.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="ITSubmissionForm.cs">
       <SubType>Form</SubType>
