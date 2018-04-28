@@ -25,6 +25,7 @@ namespace ITSubmissionForm
             User PresentUser = new User(txtName.Text);
             HelpdeskUser PresentHDUser = new HelpdeskUser(txtName.Text, Convert.ToString(CmbBoxHelpDesk.SelectedItem));
 
+            
 
             //record all the entries for the case class
             PresentCase.Tech = txtTech.Text;
@@ -40,8 +41,9 @@ namespace ITSubmissionForm
             PresentInventory.Other = txtOther.Text;
 
             //record all the entris for the user class
-            if(CmbBoxHelpDesk.SelectedIndex > 0)
+            if(CmbBoxHelpDesk.SelectedIndex >= 0)
             {
+                PresentHDUser.Organization = Prompt.ShowDialog("Organization:", "Who Owns Your HD Plan?");
                 PresentHDUser.Phone1 = txtPhone1.Text;
                 PresentHDUser.Phone2 = txtPhone2.Text;
                 PresentHDUser.Email = txtEmail.Text;
@@ -70,6 +72,7 @@ namespace ITSubmissionForm
                 file.WriteLine("Address: " + PresentUser.Address);
                 file.WriteLine("Password: " + PresentUser.Password);
                 file.WriteLine("Helpdesk User?: " + PresentHDUser.Plan);
+                file.WriteLine("Organization: " + PresentHDUser.Organization);
                 file.WriteLine("Description of Issue:");
                 file.WriteLine(PresentCase.Issue);
                 file.WriteLine("Technician: " + PresentCase.Tech);
