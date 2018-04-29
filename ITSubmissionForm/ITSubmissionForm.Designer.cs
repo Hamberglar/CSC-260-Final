@@ -59,7 +59,7 @@
             this.chkBag = new System.Windows.Forms.CheckBox();
             this.chkPowerCord = new System.Windows.Forms.CheckBox();
             this.TimeWidget = new System.Windows.Forms.DateTimePicker();
-            this.CmbBoxHelpDesk = new System.Windows.Forms.ComboBox();
+            this.cmbBoxHelpDesk = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -351,15 +351,15 @@
             // 
             // CmbBoxHelpDesk
             // 
-            this.CmbBoxHelpDesk.FormattingEnabled = true;
-            this.CmbBoxHelpDesk.Items.AddRange(new object[] {
+            this.cmbBoxHelpDesk.FormattingEnabled = true;
+            this.cmbBoxHelpDesk.Items.AddRange(new object[] {
             "Silver",
             "Gold"});
-            this.CmbBoxHelpDesk.Location = new System.Drawing.Point(91, 259);
-            this.CmbBoxHelpDesk.MaxDropDownItems = 3;
-            this.CmbBoxHelpDesk.Name = "CmbBoxHelpDesk";
-            this.CmbBoxHelpDesk.Size = new System.Drawing.Size(121, 21);
-            this.CmbBoxHelpDesk.TabIndex = 31;
+            this.cmbBoxHelpDesk.Location = new System.Drawing.Point(91, 259);
+            this.cmbBoxHelpDesk.MaxDropDownItems = 3;
+            this.cmbBoxHelpDesk.Name = "CmbBoxHelpDesk";
+            this.cmbBoxHelpDesk.Size = new System.Drawing.Size(121, 21);
+            this.cmbBoxHelpDesk.TabIndex = 31;
             // 
             // label1
             // 
@@ -376,7 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 318);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CmbBoxHelpDesk);
+            this.Controls.Add(this.cmbBoxHelpDesk);
             this.Controls.Add(this.TimeWidget);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -431,7 +431,7 @@
         private System.Windows.Forms.CheckBox chkDiscs;
         private System.Windows.Forms.CheckBox chkExternal;
         private System.Windows.Forms.DateTimePicker TimeWidget;
-        private System.Windows.Forms.ComboBox CmbBoxHelpDesk;
+        private System.Windows.Forms.ComboBox cmbBoxHelpDesk;
         private System.Windows.Forms.Label label1;
     }
 }

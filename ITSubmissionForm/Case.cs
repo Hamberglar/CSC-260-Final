@@ -8,16 +8,18 @@ namespace ITSubmissionForm
 {
     class Case
     {
-        public int CaseID { get; private set; }
-        public string Tech { get; set; }
-        public string Issue { get; set; }
-        public DateTime Date { get; set; }
+        public int ID { get; private set; }
+        public string Tech { get; private set; }
+        public string Issue { get; private set; }
+        public DateTime Date { get; private set; }
 
-        public Case(string description)
+        public Case(string CaseTech, string CaseIssue, DateTime CaseDate)
         {
             Random rnd = new Random();
-            CaseID = rnd.Next(1000, 9999);
-            Issue = description;
+            ID = rnd.Next(1000, 9999);
+            Tech = CaseTech;
+            Issue = CaseIssue;
+            Date = CaseDate;
         }
     }
 }

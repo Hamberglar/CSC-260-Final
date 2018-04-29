@@ -8,20 +8,27 @@ namespace ITSubmissionForm
 {
     class Inventory
     {
-        public string ComputerBrand { get; private set; }
-        public string ComputerModel { get; private set; }
-        public bool Bag { get; set; }
-        public bool PowerCord { get; set; }
-        public bool UsbDrive { get; set; }
-        public bool CompactDiscs { get; set; }
-        public bool Keyboard { get; set; }
-        public bool Mouse { get; set; }
-        public string Other { get; set; }
+        public string Brand { get; private set; }
+        public string Model { get; private set; }
+        public bool Bag { get; private set; }
+        public bool PowerCord { get; private set; }
+        public bool UsbDrive { get; private set; }
+        public bool CompactDiscs { get; private set; }
+        public bool Keyboard { get; private set; }
+        public bool Mouse { get; private set; }
+        public string Other { get; private set; }
 
-        public Inventory(string brand, string model)
+        public Inventory(string InventoryBrand, string InventoryModel, bool InventoryBag, bool InventoryPower, bool InventoryUsb, bool InventoryCD, bool InventoryKB, bool InventoryMouse, string InventoryOther)
         {
-            ComputerBrand = brand;
-            ComputerModel = model;
+            Brand = InventoryBrand;
+            Model = InventoryModel;
+            Bag = InventoryBag;
+            PowerCord = InventoryPower;
+            UsbDrive = InventoryUsb;
+            CompactDiscs = InventoryCD;
+            Keyboard = InventoryKB;
+            Mouse = InventoryMouse;
+            Other = InventoryOther;
         }
     }
 }

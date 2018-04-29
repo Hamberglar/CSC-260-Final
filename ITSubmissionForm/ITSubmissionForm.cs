@@ -19,44 +19,15 @@ namespace ITSubmissionForm
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            //initialize our instances; we should only need one of each;
-            Case PresentCase = new Case(rtxtIssueDescription.Text);
-            Inventory PresentInventory = new Inventory(txtBrand.Text, txtModel.Text);
-            User PresentUser = new User(txtName.Text);
-            HelpdeskUser PresentHDUser = new HelpdeskUser(txtName.Text, Convert.ToString(CmbBoxHelpDesk.SelectedItem));
+            Case presentCase = new Case(txtTech.Text, rtxtIssueDescription.Text, TimeWidget.Value);
+            Inventory presentInventory = new Inventory(txtBrand.Text, txtModel.Text, chkBag.Checked, chkPowerCord.Checked, chkExternal.Checked, chkDiscs.Checked, chkKeyboard.Checked, chkMouse.Checked, txtOther.Text);
+            User presentUser = new User(txtName.Text, txtPassword.Text, txtPhone1.Text, txtPhone2.Text, txtEmail.Text, txtAddress.Text);
+            HelpdeskUser presentHDUser = new HelpdeskUser(txtName.Text, txtPassword.Text, txtPhone1.Text, txtPhone2.Text, txtEmail.Text, txtAddress.Text);
 
-            
-
-            //record all the entries for the case class
-            PresentCase.Tech = txtTech.Text;
-            PresentCase.Date = TimeWidget.Value;
-
-            //record all the entires for the inventory class
-            PresentInventory.Bag = chkBag.Checked;
-            PresentInventory.PowerCord = chkPowerCord.Checked;
-            PresentInventory.UsbDrive = chkExternal.Checked;
-            PresentInventory.CompactDiscs = chkDiscs.Checked;
-            PresentInventory.Mouse = chkMouse.Checked;
-            PresentInventory.Keyboard = chkKeyboard.Checked;
-            PresentInventory.Other = txtOther.Text;
-
-            //record all the entris for the user class
-            if(CmbBoxHelpDesk.SelectedIndex >= 0)
+            //We initialized a class for both user and hduser, but they're basically the same until we get to this part:
+            if (cmbBoxHelpDesk.SelectedIndex >= 0)
             {
-                PresentHDUser.Organization = Prompt.ShowDialog("Organization:", "Who Owns Your HD Plan?");
-                PresentHDUser.Phone1 = txtPhone1.Text;
-                PresentHDUser.Phone2 = txtPhone2.Text;
-                PresentHDUser.Email = txtEmail.Text;
-                PresentHDUser.Address = txtAddress.Text;
-                PresentHDUser.Password = txtPassword.Text;
-            }
-            else
-            {
-                PresentUser.Phone1 = txtPhone1.Text;
-                PresentUser.Phone2 = txtPhone2.Text;
-                PresentUser.Email = txtEmail.Text;
-                PresentUser.Address = txtAddress.Text;
-                PresentUser.Password = txtPassword.Text;
+                presentHDUser.Organization = presentHDUser.PlanInfo(cmbBoxHelpDesk.SelectedText);
             }
 
             //the following is just a placeholder for further API/database integration.
@@ -64,42 +35,42 @@ namespace ITSubmissionForm
             //Not intended for long term use.
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\temp\outputexample.txt", true))
             {
-                file.WriteLine("Case ID: " + Convert.ToString(PresentCase.CaseID));
-                file.WriteLine("Name: " + PresentUser.Name);
-                file.WriteLine("Email: " + PresentUser.Email);
-                file.WriteLine("Phone1: " + PresentUser.Phone1);
-                file.WriteLine("Phone2: " + PresentUser.Phone2);
-                file.WriteLine("Address: " + PresentUser.Address);
-                file.WriteLine("Password: " + PresentUser.Password);
-                file.WriteLine("Helpdesk User?: " + PresentHDUser.Plan);
-                file.WriteLine("Organization: " + PresentHDUser.Organization);
+                file.WriteLine("Case ID: " + Convert.ToString(presentCase.ID));
+                file.WriteLine("Name: " + presentUser.Name);
+                file.WriteLine("Email: " + presentUser.Email);
+                file.WriteLine("Phone1: " + presentUser.Phone1);
+                file.WriteLine("Phone2: " + presentUser.Phone2);
+                file.WriteLine("Address: " + presentUser.Address);
+                file.WriteLine("Password: " + presentUser.Password);
+                file.WriteLine("Helpdesk User?: " + presentHDUser.Plan);
+                file.WriteLine("Organization: " + presentHDUser.Organization);
                 file.WriteLine("Description of Issue:");
-                file.WriteLine(PresentCase.Issue);
-                file.WriteLine("Technician: " + PresentCase.Tech);
-                file.WriteLine("Brand/Model: " + PresentInventory.ComputerBrand + PresentInventory.ComputerModel);
-                file.WriteLine("Date & Time: " + Convert.ToString(PresentCase.Date));
+                file.WriteLine(presentCase.Issue);
+                file.WriteLine("Technician: " + presentCase.Tech);
+                file.WriteLine("Brand/Model: " + presentInventory.Brand + presentInventory.Model);
+                file.WriteLine("Date & Time: " + Convert.ToString(presentCase.Date));
                 file.WriteLine("Customer dropped off: ");
-                if (PresentInventory.Bag)
+                if (presentInventory.Bag)
                 {
                     file.WriteLine("Bag");
                 }
-                if (PresentInventory.PowerCord)
+                if (presentInventory.PowerCord)
                 {
                     file.WriteLine("Power Cord");
                 }
-                if (PresentInventory.UsbDrive)
+                if (presentInventory.UsbDrive)
                 {
                     file.WriteLine("USB Drive");
                 }
-                if (PresentInventory.CompactDiscs)
+                if (presentInventory.CompactDiscs)
                 {
                     file.WriteLine("CDs");
                 }
-                if (PresentInventory.Mouse)
+                if (presentInventory.Mouse)
                 {
                     file.WriteLine("Mouse");
                 }
-                if (PresentInventory.Keyboard)
+                if (presentInventory.Keyboard)
                 {
                     file.WriteLine("Keyboard");
                 }
@@ -112,17 +83,16 @@ namespace ITSubmissionForm
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
+            //confirmation dialog
             var confirmResult = MessageBox.Show("Are you sure you want to clear all entries?",
                                      "Confirm Clear",
                                      MessageBoxButtons.YesNo);
+            //if yes, call the clear function
             if (confirmResult == DialogResult.Yes)
             {
                 ClearEntries();
             }
-            else
-            {
-                //don't do anything
-            }
+            //if no, do nothing
         }
 
         private void ClearEntries()
@@ -136,7 +106,7 @@ namespace ITSubmissionForm
             chkDiscs.Checked = false;
             chkMouse.Checked = false;
             chkKeyboard.Checked = false;
-            CmbBoxHelpDesk.SelectedIndex = -1;
+            cmbBoxHelpDesk.SelectedIndex = -1;
             txtOther.Text = "Other";
             txtBrand.Text = "";
             txtModel.Text = "";
