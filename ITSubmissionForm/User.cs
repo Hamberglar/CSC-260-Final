@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ITSubmissionForm
 {
@@ -15,9 +16,10 @@ namespace ITSubmissionForm
         public string Email { get; protected set; }
         public string Address { get; protected set; }
 
+        //Apparently I need a default constructor so that the subclass can have the elements of this class passed to it?
+        //I don't quite understand why it can't just make that work automatically. Auto-implemented properties seems about equally realistic.
         public User()
         {
-            throw new System.ArgumentException("You cannot submit a ticket without a name", "Error");
         }
 
         public User(string UserName, string UserPass, string UserPhone1, string UserPhone2, string UserEmail, string UserAddr)

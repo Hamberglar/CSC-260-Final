@@ -33,49 +33,58 @@ namespace ITSubmissionForm
             //the following is just a placeholder for further API/database integration.
             //This just lets you see that it's working, essentially.
             //Not intended for long term use.
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\temp\outputexample.txt", true))
+            if (txtName.Text != "")
             {
-                file.WriteLine("Case ID: " + Convert.ToString(presentCase.ID));
-                file.WriteLine("Name: " + presentUser.Name);
-                file.WriteLine("Email: " + presentUser.Email);
-                file.WriteLine("Phone1: " + presentUser.Phone1);
-                file.WriteLine("Phone2: " + presentUser.Phone2);
-                file.WriteLine("Address: " + presentUser.Address);
-                file.WriteLine("Password: " + presentUser.Password);
-                file.WriteLine("Helpdesk User?: " + presentHDUser.Plan);
-                file.WriteLine("Organization: " + presentHDUser.Organization);
-                file.WriteLine("Description of Issue:");
-                file.WriteLine(presentCase.Issue);
-                file.WriteLine("Technician: " + presentCase.Tech);
-                file.WriteLine("Brand/Model: " + presentInventory.Brand + presentInventory.Model);
-                file.WriteLine("Date & Time: " + Convert.ToString(presentCase.Date));
-                file.WriteLine("Customer dropped off: ");
-                if (presentInventory.Bag)
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\temp\outputexample.txt", true))
                 {
-                    file.WriteLine("Bag");
+                    file.WriteLine("Case ID: " + Convert.ToString(presentCase.ID));
+                    file.WriteLine("Name: " + presentUser.Name);
+                    file.WriteLine("Email: " + presentUser.Email);
+                    file.WriteLine("Phone1: " + presentUser.Phone1);
+                    file.WriteLine("Phone2: " + presentUser.Phone2);
+                    file.WriteLine("Address: " + presentUser.Address);
+                    file.WriteLine("Password: " + presentUser.Password);
+                    file.WriteLine("Helpdesk User?: " + presentHDUser.Plan);
+                    file.WriteLine("Organization: " + presentHDUser.Organization);
+                    file.WriteLine("Description of Issue:");
+                    file.WriteLine(presentCase.Issue);
+                    file.WriteLine("Technician: " + presentCase.Tech);
+                    file.WriteLine("Brand/Model: " + presentInventory.Brand + presentInventory.Model);
+                    file.WriteLine("Date & Time: " + Convert.ToString(presentCase.Date));
+                    file.WriteLine("Customer dropped off: ");
+                    if (presentInventory.Bag)
+                    {
+                        file.WriteLine("Bag");
+                    }
+                    if (presentInventory.PowerCord)
+                    {
+                        file.WriteLine("Power Cord");
+                    }
+                    if (presentInventory.UsbDrive)
+                    {
+                        file.WriteLine("USB Drive");
+                    }
+                    if (presentInventory.CompactDiscs)
+                    {
+                        file.WriteLine("CDs");
+                    }
+                    if (presentInventory.Mouse)
+                    {
+                        file.WriteLine("Mouse");
+                    }
+                    if (presentInventory.Keyboard)
+                    {
+                        file.WriteLine("Keyboard");
+                    }
+                    file.WriteLine("\n");
                 }
-                if (presentInventory.PowerCord)
-                {
-                    file.WriteLine("Power Cord");
-                }
-                if (presentInventory.UsbDrive)
-                {
-                    file.WriteLine("USB Drive");
-                }
-                if (presentInventory.CompactDiscs)
-                {
-                    file.WriteLine("CDs");
-                }
-                if (presentInventory.Mouse)
-                {
-                    file.WriteLine("Mouse");
-                }
-                if (presentInventory.Keyboard)
-                {
-                    file.WriteLine("Keyboard");
-                }
-                file.WriteLine("\n");
             }
+
+            else
+            {
+                MessageBox.Show("You cannot create a ticket without a name.", "No Name", MessageBoxButtons.OK);
+            }
+            
 
             //submit also clears, so the next user can enter their information
             ClearEntries();
