@@ -24,7 +24,7 @@ namespace ITSubmissionForm
             //To demonstrate, we initialized an object for both user and hduser previously, but they're the same until we get to this part:
             if (cmbBoxHelpDesk.SelectedIndex >= 0)
             {
-                presentHDUser.Organization = presentHDUser.PlanInfo(cmbBoxHelpDesk.SelectedText);
+                presentHDUser.Organization = presentHDUser.UpdateDetails(cmbBoxHelpDesk.SelectedText);
             }
 
             /*the following is just a placeholder for further API/database integration.

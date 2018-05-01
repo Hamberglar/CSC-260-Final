@@ -16,7 +16,8 @@
             Address = HDUserAddr;
         }
 
-        public string PlanInfo(string HDUserPlan)
+        //Like I said in the base, this override is pretty useless, but it could be expanded upon if we went further with this project.
+        public override string UpdateDetails(string HDUserPlan)
         {
             ////set values for all the members based on arguments passed to this function
             Plan = HDUserPlan;

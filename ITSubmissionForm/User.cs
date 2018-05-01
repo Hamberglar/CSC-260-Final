@@ -25,5 +25,14 @@
             Email = UserEmail;
             Address = UserAddr;
         }
+
+        //This is kind of pointless, but I wanted to demonstrate that I know how it works, I guess.
+        //I can't think of an actual use for polymorphism right now. Think of this as exapandable.
+        public virtual string UpdateDetails(string PlaceHolder)
+        {
+            PlaceHolder = "If you see this, this is an error. Code: 822";
+            return PlaceHolder;
+            //822 is made up, but at least it lets you know which error this is if we add more.
+        }
     }
 }
