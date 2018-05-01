@@ -96,7 +96,7 @@
             this.txtEmail.Location = new System.Drawing.Point(58, 33);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(390, 20);
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 1;
             // 
             // lblPhones
             // 
@@ -112,14 +112,14 @@
             this.txtPhone1.Location = new System.Drawing.Point(57, 59);
             this.txtPhone1.Name = "txtPhone1";
             this.txtPhone1.Size = new System.Drawing.Size(188, 20);
-            this.txtPhone1.TabIndex = 4;
+            this.txtPhone1.TabIndex = 2;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(57, 85);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(391, 20);
-            this.txtAddress.TabIndex = 6;
+            this.txtAddress.TabIndex = 4;
             // 
             // lblAddress
             // 
@@ -135,7 +135,7 @@
             this.txtPassword.Location = new System.Drawing.Point(57, 107);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(391, 20);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 5;
             // 
             // lblPassword
             // 
@@ -151,7 +151,7 @@
             this.txtPhone2.Location = new System.Drawing.Point(251, 59);
             this.txtPhone2.Name = "txtPhone2";
             this.txtPhone2.Size = new System.Drawing.Size(197, 20);
-            this.txtPhone2.TabIndex = 9;
+            this.txtPhone2.TabIndex = 3;
             // 
             // panel2
             // 
@@ -176,7 +176,7 @@
             this.rtxtIssueDescription.Location = new System.Drawing.Point(218, 154);
             this.rtxtIssueDescription.Name = "rtxtIssueDescription";
             this.rtxtIssueDescription.Size = new System.Drawing.Size(428, 155);
-            this.rtxtIssueDescription.TabIndex = 20;
+            this.rtxtIssueDescription.TabIndex = 3;
             this.rtxtIssueDescription.Text = "";
             // 
             // txtOther
@@ -185,7 +185,7 @@
             this.txtOther.Multiline = true;
             this.txtOther.Name = "txtOther";
             this.txtOther.Size = new System.Drawing.Size(180, 55);
-            this.txtOther.TabIndex = 22;
+            this.txtOther.TabIndex = 0;
             this.txtOther.Text = "Other";
             // 
             // btnSubmit
@@ -193,7 +193,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(12, 286);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(98, 23);
-            this.btnSubmit.TabIndex = 23;
+            this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
@@ -203,7 +203,7 @@
             this.BtnClear.Location = new System.Drawing.Point(114, 286);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(98, 23);
-            this.BtnClear.TabIndex = 24;
+            this.BtnClear.TabIndex = 5;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -226,7 +226,7 @@
             this.txtTech.Location = new System.Drawing.Point(43, 48);
             this.txtTech.Name = "txtTech";
             this.txtTech.Size = new System.Drawing.Size(154, 20);
-            this.txtTech.TabIndex = 5;
+            this.txtTech.TabIndex = 2;
             // 
             // lblTech
             // 
@@ -242,7 +242,7 @@
             this.txtModel.Location = new System.Drawing.Point(43, 26);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(154, 20);
-            this.txtModel.TabIndex = 3;
+            this.txtModel.TabIndex = 1;
             // 
             // lblModel
             // 
@@ -258,7 +258,7 @@
             this.txtBrand.Location = new System.Drawing.Point(43, 4);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.Size = new System.Drawing.Size(154, 20);
-            this.txtBrand.TabIndex = 1;
+            this.txtBrand.TabIndex = 0;
             // 
             // lblBrand
             // 
@@ -288,7 +288,7 @@
             this.chkExternal.Location = new System.Drawing.Point(4, 50);
             this.chkExternal.Name = "chkExternal";
             this.chkExternal.Size = new System.Drawing.Size(72, 17);
-            this.chkExternal.TabIndex = 6;
+            this.chkExternal.TabIndex = 2;
             this.chkExternal.Text = "USB Disk";
             this.chkExternal.UseVisualStyleBackColor = true;
             // 
@@ -347,9 +347,9 @@
             this.TimeWidget.Location = new System.Drawing.Point(12, 233);
             this.TimeWidget.Name = "TimeWidget";
             this.TimeWidget.Size = new System.Drawing.Size(200, 20);
-            this.TimeWidget.TabIndex = 30;
+            this.TimeWidget.TabIndex = 1;
             // 
-            // CmbBoxHelpDesk
+            // cmbBoxHelpDesk
             // 
             this.cmbBoxHelpDesk.FormattingEnabled = true;
             this.cmbBoxHelpDesk.Items.AddRange(new object[] {
@@ -357,9 +357,9 @@
             "Gold"});
             this.cmbBoxHelpDesk.Location = new System.Drawing.Point(91, 259);
             this.cmbBoxHelpDesk.MaxDropDownItems = 3;
-            this.cmbBoxHelpDesk.Name = "CmbBoxHelpDesk";
+            this.cmbBoxHelpDesk.Name = "cmbBoxHelpDesk";
             this.cmbBoxHelpDesk.Size = new System.Drawing.Size(121, 21);
-            this.cmbBoxHelpDesk.TabIndex = 31;
+            this.cmbBoxHelpDesk.TabIndex = 2;
             // 
             // label1
             // 
