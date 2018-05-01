@@ -19,20 +19,24 @@ namespace ITSubmissionForm
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
+            //initialize
             Case presentCase = new Case(txtTech.Text, rtxtIssueDescription.Text, TimeWidget.Value);
             Inventory presentInventory = new Inventory(txtBrand.Text, txtModel.Text, chkBag.Checked, chkPowerCord.Checked, chkExternal.Checked, chkDiscs.Checked, chkKeyboard.Checked, chkMouse.Checked, txtOther.Text);
             User presentUser = new User(txtName.Text, txtPassword.Text, txtPhone1.Text, txtPhone2.Text, txtEmail.Text, txtAddress.Text);
             HelpdeskUser presentHDUser = new HelpdeskUser(txtName.Text, txtPassword.Text, txtPhone1.Text, txtPhone2.Text, txtEmail.Text, txtAddress.Text);
+            //Right now, there's really not much of a difference between User and HDUser, except that HDUser is bigger.
+            //It's something I'd like to have expanded on if I had more time to think about ways to differentiate them in the main.
+            //One thing I'm missing is how to pass objects into a function or instantiate objects and have them available outside of the function they were made in.
 
-            //We initialized a class for both user and hduser, but they're basically the same until we get to this part:
+            //To demonstrate, we initialized an object for both user and hduser previously, but they're the same until we get to this part:
             if (cmbBoxHelpDesk.SelectedIndex >= 0)
             {
                 presentHDUser.Organization = presentHDUser.PlanInfo(cmbBoxHelpDesk.SelectedText);
             }
 
-            //the following is just a placeholder for further API/database integration.
-            //This just lets you see that it's working, essentially.
-            //Not intended for long term use.
+            /*the following is just a placeholder for further API/database integration.
+            This just lets you see that it's working, essentially.
+            Not intended for long term use.*/
             if (txtName.Text != "")
             {
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\temp\outputexample.txt", true))
@@ -82,6 +86,7 @@ namespace ITSubmissionForm
 
             else
             {
+                //Display an error message dialog if the user omits a name. No other fields are required, as they may not have need of them.
                 MessageBox.Show("You cannot create a ticket without a name.", "No Name", MessageBoxButtons.OK);
             }
             
