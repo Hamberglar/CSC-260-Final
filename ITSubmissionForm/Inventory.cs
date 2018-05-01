@@ -14,6 +14,7 @@
 
         public Inventory(string InventoryBrand, string InventoryModel, bool InventoryBag, bool InventoryPower, bool InventoryUsb, bool InventoryCD, bool InventoryKB, bool InventoryMouse, string InventoryOther)
         {
+            //set values for all the members based on arguments passed to the constructor
             Brand = InventoryBrand;
             Model = InventoryModel;
             Bag = InventoryBag;

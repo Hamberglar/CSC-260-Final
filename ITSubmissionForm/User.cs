@@ -17,6 +17,7 @@
 
         public User(string UserName, string UserPass, string UserPhone1, string UserPhone2, string UserEmail, string UserAddr)
         {
+            //set values for all the members based on arguments passed to the constructor
             Name = UserName;
             Password = UserPass;
             Phone1 = UserPhone1;
