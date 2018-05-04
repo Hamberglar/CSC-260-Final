@@ -93,9 +93,9 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(58, 33);
+            this.txtEmail.Location = new System.Drawing.Point(57, 33);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(390, 20);
+            this.txtEmail.Size = new System.Drawing.Size(391, 20);
             this.txtEmail.TabIndex = 1;
             // 
             // lblPhones
@@ -132,7 +132,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(57, 107);
+            this.txtPassword.Location = new System.Drawing.Point(57, 111);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(391, 20);
             this.txtPassword.TabIndex = 5;
@@ -140,7 +140,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(3, 112);
+            this.lblPassword.Location = new System.Drawing.Point(3, 114);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 10;
