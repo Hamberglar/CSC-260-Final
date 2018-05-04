@@ -108,13 +108,14 @@ namespace ITSubmissionForm
             //this should clear all the entries
             txtTech.Text = "";
             rtxtIssueDescription.Text = "";
+            TimeWidget.Value = System.DateTime.Now; //this was added so that the time doesn't stay the same for every user. When hitting submit or clear, the the time on the clock resets.
             chkBag.Checked = false;
             chkPowerCord.Checked = false;
             chkExternal.Checked = false;
             chkDiscs.Checked = false;
             chkMouse.Checked = false;
             chkKeyboard.Checked = false;
-            cmbBoxHelpDesk.SelectedIndex = -1;
+            cmbBoxHelpDesk.SelectedIndex = -1; //this means to reset the drop down menu to unselected. 0 = silver, 1 = gold.
             txtOther.Text = "Other";
             txtBrand.Text = "";
             txtModel.Text = "";
