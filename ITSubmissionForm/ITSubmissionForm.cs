@@ -8,6 +8,7 @@ namespace ITSubmissionForm
         public FormCheckIn()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
